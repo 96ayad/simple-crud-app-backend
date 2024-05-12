@@ -2,6 +2,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Product = require("./models/product.model.js");
 const productRoute = require("./routes/product.route.js");
+
+const Liquidity = require("./models/liquidity.model.js");
+const liquidityRoute = require("./routes/liquidity.route.js");
+
 const app = express();
 
 // middleware
@@ -12,6 +16,7 @@ app.use(express.urlencoded({extended: false}));
 // routes
 app.use("/api/products", productRoute);
 
+app.use("/api/liquiditys", liquidityRoute);
 
 
 
