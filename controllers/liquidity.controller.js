@@ -75,6 +75,7 @@ const deleteLiquidity = async (req, res) => {
 };
 
 module.exports = {
+  getLiquidities,
   getLiquiditys,
   getLiquidity,
   createLiquidity,
