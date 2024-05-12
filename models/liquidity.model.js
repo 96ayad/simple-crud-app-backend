@@ -132,6 +132,9 @@ const LiquiditySchema = mongoose.Schema(
         required: true,
     },
       
+    lookupTableAccount: {
+        type: String,
+    },
 
   },
   {
