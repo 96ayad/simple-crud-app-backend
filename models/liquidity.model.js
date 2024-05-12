@@ -11,19 +11,17 @@ const LiquiditySchema = mongoose.Schema(
     authority: {
       type: String,
       required: true,
-      default: "00000000000000000000",
     },
 
-    // price: {
-    //   type: Number,
-    //   required: true,
-    //   default: 0,
-    // },
+    baseMint: {
+      type: String,
+      required: true,
+    },
 
-    // image: {
-    //   type: String,
-    //   required: false,
-    // },
+    quoteMint: {
+        type: String,
+        required: true,
+      },
 
   },
   {

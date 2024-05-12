@@ -1,5 +1,18 @@
 const Liquidity = require("../models/liquidity.model");
 
+////////ayad/////////
+const getLiquidities = async (req, res) => {
+    try {
+      const { basemint } = req.params;
+      const { quotemint } = req.params;
+      const liquidities = await Liquidity.find({baseMint: basemint, quoteMint: quotemint});
+      res.status(200).json(liquidities);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  };
+
+
 const getLiquiditys = async (req, res) => {
   try {
     const liquiditys = await Liquidity.find({});
