@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 
 const LiquiditySchema = mongoose.Schema(
   {
-    name: {
+    id: {
       type: String,
-      required: [true, "Please enter Liquidity name"],
+      required: [true, "Please enter Liquidity id"],
     },
 
     authority: {
