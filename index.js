@@ -22,7 +22,11 @@ app.get("/", (req, res) => {
 
 mongoose
   .connect(
-    "mongodb+srv://haris2iftikhar:GClTzr15XhkjvN6k@backenddb.nrurtot.mongodb.net/Node-API?retryWrites=true&w=majority"
+
+    ////////////////ayad////////////////////
+    // "mongodb+srv://haris2iftikhar:GClTzr15XhkjvN6k@backenddb.nrurtot.mongodb.net/Node-API?retryWrites=true&w=majority"
+
+    "mongodb+srv://ayadalig:21348457@node-rest-shop.31y2z0q.mongodb.net/Node-API?retryWrites=true&w=majority&appName=node-rest-shop"
   )
   .then(() => {
     console.log("Connected to database!");
