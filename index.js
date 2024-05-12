@@ -18,6 +18,9 @@ app.use("/api/products", productRoute);
 
 app.use("/api/liquiditys", liquidityRoute);
 
+app.use("/v2/sdk/liquidity/mint", liquidityRoute);
+
+
 
 
 app.get("/", (req, res) => {
