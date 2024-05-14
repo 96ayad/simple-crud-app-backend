@@ -17,7 +17,7 @@ const Liquidity = require("../models/liquidity.model");
 
 const getLiquiditys = async (req, res) => {
   try {
-    const liquiditys = await Liquidity.find({},{"_id":0, "createdAt": 0, "updatedAt": 0});
+    const liquiditys = await Liquidity.find({},{"_id":0, "createdAt": 0, "updatedAt": 0, "__v":0});
 
     // res.status(200).json(liquiditys);
     res.status(200).json({"name":"Raydium Mainnet Liquidity Pools","official":liquiditys});
