@@ -1,26 +1,39 @@
 const Liquidity = require("../models/liquidity.model");
 
 ////////ayad/////////
-const getLiquidities = async (req, res) => {
-    try {
-      const { basemint } = req.params;
-      const { quotemint } = req.params;
-      const liquidities = await Liquidity.find({baseMint: basemint, quoteMint: quotemint});
-      res.status(200).json(liquidities);
-    } catch (error) {
-      res.status(500).json({ message: error.message });
-    }
-  };
 
+// const getLiquiditys = async (req, res) => {
+//   try {
+//     const liquiditys = await Liquidity.find({});
+
+//     res.status(200).json(liquiditys);
+//     // res.status(200).json({"name":"Raydium Mainnet Liquidity Pools","official":liquiditys});
+
+
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
 
 const getLiquiditys = async (req, res) => {
   try {
-    const liquiditys = await Liquidity.find({});
+    const liquiditys = await Liquidity.find({},{"_id":0});
 
     // res.status(200).json(liquiditys);
-    res.status(200).json({"name":"Raydium Mainnet Liquidity Pools","official":liquiditys.baseMint});
+    res.status(200).json({"name":"Raydium Mainnet Liquidity Pools","official":liquiditys});
 
 
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+const getLiquidities = async (req, res) => {
+  try {
+    const { basemint } = req.params;
+    const { quotemint } = req.params;
+    const liquidities = await Liquidity.find({baseMint: basemint, quoteMint: quotemint});
+    res.status(200).json(liquidities);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
