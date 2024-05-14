@@ -16,7 +16,11 @@ const getLiquidities = async (req, res) => {
 const getLiquiditys = async (req, res) => {
   try {
     const liquiditys = await Liquidity.find({});
-    res.status(200).json(liquiditys);
+
+    // res.status(200).json(liquiditys);
+    res.status(200).json('{"name":"Raydium Mainnet Liquidity Pools","official":' + liquiditys + "}");
+
+
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
